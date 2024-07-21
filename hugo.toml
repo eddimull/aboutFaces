@@ -1,0 +1,4 @@
+baseURL = 'https://aboutfaces.bio'
+languageCode = 'en-us'
+title = 'About Faces'
+theme = 'ananke'
