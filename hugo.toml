@@ -1,4 +1,11 @@
 baseURL = 'https://aboutfaces.bio'
 languageCode = 'en-us'
 title = 'About Faces'
-theme = 'ananke'
+subtitle = 'A blog about faces'
+theme = ["PaperMod"]
+[params]
+ [params.footer]
+    name = "Laurie Jankower James"
+    email = "laurie@lauriejjames.com"
+    phone = "337.278.4230"
+    extra = "Secure payment options are available"

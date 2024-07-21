@@ -1,0 +1,1 @@
+<style>ol{list-style-type:lower-alpha;padding-left:20px}ol li{list-style-type:none;counter-increment:item}ol li:before{content:counter(item,lower-alpha)") ";margin-left:-20px}footer{display:flex}.footerContent{flex:1}</style>
