@@ -19,12 +19,16 @@ and (max-width : 767px)
     }
 
     
+    
     .body-image{
         object-fit:contain;
     }
 }
 .home-page-body > div{
     display:flex;  
+}
+.home-page-body p{
+    margin-top:1em;
 }
 .body-image-container{
     justify-content: center;
