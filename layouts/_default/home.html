@@ -1,5 +1,8 @@
 {{ define "main" }}
 {{ $style := resources.Get "css/custom.css" | minify | fingerprint }}
+{{ $style := resources.Get "css/carousel.css" | minify | fingerprint}}
+{{ $script := resources.Get "js/carousel.js" | minify | fingerprint }}
+<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
   <main aria-role="main">
     <header class="home-page-header">
@@ -14,6 +17,7 @@
       {{ partial "body.html" . }}
       </div>
     </div>
+    {{ partial "reviews.html" . }}
     <div>
       {{ partial "summary.html" . }}
     </div>
