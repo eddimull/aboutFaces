@@ -1,21 +1,21 @@
 {{ define "main" }}
 {{ $style := resources.Get "css/custom.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-  <main aria-role="main">
-    <header class="home-page-header">
-      <h1>{{ .Title }}</h1>
-      {{ with .Params.subtitle }}
-        <span class="subtitle">{{ . }}</span>
-      {{ end }}
-    </header>
-    <div class="home-page-content">
-      {{ partial "tagline.html" . }}
-      <div class="body-container">
+<main aria-role="main">
+  <header class="home-page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+    <span class="subtitle">{{ . }}</span>
+    {{ end }}
+  </header>
+  <div class="home-page-content">
+    {{ partial "tagline.html" . }}
+    <div class="body-container">
       {{ partial "body.html" . }}
-      </div>
     </div>
-    <div>
-      {{ partial "summary.html" . }}
-    </div>
-  </main>
+  </div>
+  <div>
+    {{ partial "summary.html" . }}
+  </div>
+</main>
 {{ end }}
