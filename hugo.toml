@@ -1,6 +1,6 @@
 baseURL = 'https://www.aboutfaces.bio'
 languageCode = 'en-us'
-title = 'About Faces'
+title = 'About Faces ™'
 subtitle = 'A blog about faces'
 theme = ["PaperMod"]
 [params]
