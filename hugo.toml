@@ -9,3 +9,14 @@ theme = ["PaperMod"]
     email = "laurie@lauriejjames.com"
     phone = "337.278.4230"
     extra = "Secure payment options are available"
+ [params.secondEdition]
+    launchDate = "December 1, 2026"
+    # TODO: swap in the 2nd Edition product links from lauriejjames.com/store once they exist
+    [[params.secondEdition.items]]
+      title = "About Faces™ – 2nd Edition – Paperback (autographed)"
+      price = "$20.00"
+      url = "https://www.lauriejjames.com/store"
+    [[params.secondEdition.items]]
+      title = "About Faces™ – 2nd Edition – Hardback (autographed)"
+      price = "$40.00"
+      url = "https://www.lauriejjames.com/store"

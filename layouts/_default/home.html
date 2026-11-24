@@ -8,6 +8,9 @@
     <span class="subtitle">{{ . }}</span>
     {{ end }}
   </header>
+  {{ partial "second-edition.html" . }}
+  <div class="original-edition">
+  <h2 class="original-edition-heading">The Original Edition</h2>
   <div class="home-page-content">
     {{ partial "tagline.html" . }}
     <div class="body-container">
@@ -15,8 +18,8 @@
     </div>
   </div>
   <div class="store-items">
-    <h2>Available Books</h2>
-    <p>Copies are now only available from my online store.</p>
+    <h3>Order the Original Edition</h3>
+    <p>Copies are available only from my online store.</p>
     
     <div class="store-item">
       <div class="store-item-content">
@@ -53,6 +56,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </main>
 {{ end }}
