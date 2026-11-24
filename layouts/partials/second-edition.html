@@ -1,0 +1,60 @@
+{{- $ed := site.Params.secondEdition -}}
+{{- $hero := resources.Get "images/second-edition/story-worth-telling.png" -}}
+{{- $gallery := slice
+  (dict "src" "images/second-edition/lasting-mark.png" "alt" "Some People Leave a Lasting Mark: from family and lifelong friends to mentors and unexpected heroes.")
+  (dict "src" "images/second-edition/humor-and-heart.png" "alt" "A Little Humor. A Lot of Heart. Every chapter brings a new perspective.")
+  (dict "src" "images/second-edition/every-challenge.png" "alt" "Through Every Challenge, There Is a Lesson: faith, courage, resilience, hope.")
+  (dict "src" "images/second-edition/faces-change.png" "alt" "The Faces Change. The Gifts Remain. Celebrate the people who helped shape your story.")
+-}}
+
+<section class="second-edition" id="second-edition">
+  <div class="se-announce">
+    <span class="se-badge">New</span>
+    <h2>About Faces™ – 2nd Edition</h2>
+    <p class="se-launch">Launching {{ $ed.launchDate }}</p>
+  </div>
+
+  {{- with $hero }}
+  {{- $img := .Process "webp q85" }}
+  <img class="se-hero" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+       alt="Every Face Has a Story Worth Telling. About Faces 2nd Edition: some people change your life without knowing it.">
+  {{- end }}
+
+  <div class="se-series">
+    <h3>About Faces – The Series</h3>
+    <p class="se-lede">Every life has a story. Some are shaped by the people we meet. Others emerge from unexpected opportunities, memorable experiences, personal challenges, and moments that change our direction.</p>
+    <p>The About Faces series by Laurie Jankower James is a collection of personal stories celebrating the people, places, experiences, and turning points that make life memorable.</p>
+    <p>Each book explores a different theme through authentic stories drawn from the author's life. From the people who influenced her journey—sometimes without ever knowing it—to theatrical adventures, unexpected encounters, family memories, and experiences worth preserving, these books offer a candid, often humorous, and occasionally surprising look at a life lived with curiosity and an openness to possibility.</p>
+    <p>Although each volume has its own theme and identity, a common thread runs throughout: the people we meet, the opportunities we embrace, and the experiences we share often leave a greater impression than we realize.</p>
+    <p>Through storytelling, photographs, personal reflections, and a healthy appreciation for life's unexpected turns, Laurie invites readers to revisit their own memories, recognize the people who made a difference, and appreciate the stories that deserve to be told.</p>
+    <p>Because every life has its own collection of faces, experiences, and defining moments.</p>
+    <p class="se-closing">Some stories deserve to be remembered. All of them deserve to be told.</p>
+  </div>
+
+  <div class="se-gallery">
+    {{- range $gallery }}
+    {{- $alt := .alt }}
+    {{- with resources.Get .src }}
+    {{- $img := .Process "webp q85" }}
+    <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $alt }}" loading="lazy">
+    {{- end }}
+    {{- end }}
+  </div>
+
+  <div class="store-items">
+    <h3>Order the 2nd Edition</h3>
+    {{- range $ed.items }}
+    <div class="store-item store-item--featured">
+      <div class="store-item-content">
+        <div class="store-item-info">
+          <h3>{{ .title }}</h3>
+          <p class="price">{{ .price }}</p>
+        </div>
+        <div class="store-item-action">
+          <a href="{{ .url }}" class="btn-store">Purchase</a>
+        </div>
+      </div>
+    </div>
+    {{- end }}
+  </div>
+</section>
